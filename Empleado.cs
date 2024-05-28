@@ -46,5 +46,27 @@ namespace EspacioEmpleado{
             Especialista,
             Investigador
         }
+
+        public int antiguedad;
+        DateTime fechaActual = DateTime.Now;
+        public void calcularAntiguedad(){ //antiguedad en la empresa
+            antiguedad = fechaActual.Year - fechaIngreso.Year;
+        }
+
+        public int edad;
+        public void calcularEdad(){ //edad
+            edad = fechaActual.Year - fechaNacimiento.Year;
+        }
+
+        public int cantAniosJubilacion;
+
+        public void calcularJubilacion(){  //jubilacion
+            if(antiguedad < 65){
+                cantAniosJubilacion = 65 - antiguedad;
+            }else{
+                cantAniosJubilacion = 0;
+            }
+        }
+
     }
 }
