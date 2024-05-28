@@ -68,5 +68,22 @@ namespace EspacioEmpleado{
             }
         }
 
+        public double salario;
+        public double adicional;
+        public void calcularSalario(){
+            if(antiguedad<20 && antiguedad>0){
+                adicional = (sueldoBasico*0.01)*antiguedad;
+            }else{
+                adicional = (sueldoBasico*0.25)*antiguedad;
+            }
+            if(cargo == Cargos.Ingeniero || cargo == Cargos.Especialista){
+                adicional *= 1.5;
+            }
+            if(estadoCivil == 'c'){
+                adicional += 150000;
+            }
+            salario = sueldoBasico + adicional;
+        }
+
     }
 }
